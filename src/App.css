@@ -1,0 +1,227 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --vlightgray: hsl(228, 33%, 97%);
+    --lightgray: hsl(223, 19%, 93%);
+    --darkblue: hsl(212, 24%, 26%);
+    --grayishblue: hsl(211, 10%, 45%);
+    --moderateblue: hsl(238, 40%, 52%);
+    --softred: hsl(358, 79%, 66%);
+    --palered: hsl(357, 100%, 86%);
+    --lightgrayishblue: hsl(239, 57%, 85%);
+}
+
+body{
+    background-color: var(--vlightgray);
+    font-family: 'Rubik', sans-serif;
+    color: var(--grayishblue);
+}
+
+body p{
+    font-size: 16px;
+}
+
+/* .container{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-items: flex-end;
+} */
+
+/* single comment styling */
+
+.comment{
+    display: flex;
+    background-color: var(--white);
+    width: 50%;
+    border-radius: 0.3rem;
+    margin: 1rem auto;
+    padding-bottom: 1.8rem;
+}
+
+.comment .voteContain{
+    text-align: center;
+    padding: 0.5rem;
+    margin: 0.8rem;
+    background-color: var(--vlightgray);
+    border-radius: 0.4rem;
+}
+
+.comment .voteContain button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    color: var(--grayishblue);
+    opacity: 0.5;
+}
+
+.comment .voteContain p{
+    color: var(--grayishblue);
+    font-size: 0.8rem;
+    font-weight: bolder;
+    margin: 0.4rem 0;
+}
+
+.comment .content{
+    width: 100%;
+}
+
+.comment .top{
+    display: flex;
+    justify-content: space-between;
+    min-width: 100%;
+}
+
+.comment .top .topleft{
+    display: flex;
+    width: 80%;
+    align-items: center;
+}
+
+.comment .top .topleft img{
+    width: 30px;
+    height: 30px;
+    margin: 0.8rem 0.8rem 0.8rem 0;
+}
+
+.comment .top .topleft .username{
+    color: var(--darkblue);
+    font-weight: bolder;
+    margin-right: 0.8rem;
+}
+
+.comment .top .topright{
+    display: flex;
+    align-items: center;
+    margin-right: 0.8rem;
+}
+
+.comment .top .topright img{
+    width: 10px;
+    height: 10px;
+    margin-right: 0.5rem;
+}
+
+.comment .top .topright p{
+    color: var(--darkblue);
+    font-weight: bolder;
+    font-size: 0.8rem;
+}
+
+.comment .top .topright .delete{
+    margin-right: 1rem;
+    color: var(--softred);
+}
+
+.comment .message{
+    width: 90%;
+}
+
+    /* single comment styling ends*/
+
+/* input component styling */
+
+.input{
+    display: flex;
+    background-color: var(--white);
+    width: 50%;
+    border-radius: 0.3rem;
+    margin: 1rem auto;
+    padding-bottom: 1.8rem;
+}
+
+.input img{
+    width: 30px;
+    height: 30px;
+    margin: 0.8rem;
+    align-items: start;
+}
+
+.input textarea{
+    width: 80%;
+    resize: none;
+    margin: 0.8rem 0.8rem 0 0;
+    outline: none;
+    border: 1px solid var(--lightgray);
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.input textarea:hover{
+    outline: 1px solid var(--darkblue);
+}
+
+.input button{
+    padding: 0.5rem 1.5rem;
+    max-height: 6vh;
+    border: none;
+    background-color: var(--moderateblue);
+    color: var(--white);
+    border-radius: 5px;
+    margin: 0.8rem 1rem 0 0;
+    cursor: pointer;
+}
+
+.input button:hover{
+    background-color: var(--lightgrayishblue);
+}
+
+    /* input component styling ends */
+
+/* reply section styling */
+
+.reply{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.reply::after{
+    content: '';
+    position: absolute;
+    left: 5%;
+    height: 100%;
+    width: 2px;
+    background-color: var(--lightgray);
+}
+.reply .comment{
+    width: 90%;
+    margin: 0 0 1rem;
+    margin-left: auto;
+}
+
+    /* reply section styling ends*/ 
+
+/* Modal Styling */
+
+.modalContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.modalContainer .modal{
+    background-color: var(--white);
+    padding: 1rem;
+    opacity: 1;
+    width: 15rem;
+    height: 10rem;
+}
+
+.modalContainer .modal h3{
+    
+}
