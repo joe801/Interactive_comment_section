@@ -6,6 +6,7 @@ const Comments = ( {dataJson} ) => {
     const [content, setContent] = useState(''); // state variable to grab data from input component
     const currentUser = dataJson.currentUser;   
     const [comments, setComments] = useState([]);
+    const [deleteState, setDeleteState] = useState(false);
     //updating value of comment on first render
     useEffect(() =>{
         setComments(dataJson.comments);

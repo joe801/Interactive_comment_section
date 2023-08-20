@@ -67,7 +67,7 @@ const Comment = ( {score, username, createdAT, content, image } ) => {
                 </div>
             </div>
         </div>
-        {deleteState && <Modal />}
+        {deleteState && <Modal setDeleteState={setDeleteState}/>}
         </>
      );
 }

@@ -216,12 +216,43 @@ body p{
 }
 .modalContainer .modal{
     background-color: var(--white);
-    padding: 1rem;
+    padding: 1.5rem;
     opacity: 1;
     width: 15rem;
-    height: 10rem;
+    height: 8.5rem;
+    border-radius: 6px;
 }
 
 .modalContainer .modal h3{
-    
+    color: var(--darkblue);
+    margin-bottom: 1rem;
+}
+
+.modalContainer .modal p{
+    font-size: 0.8rem;
+}
+
+.modalContainer .modal .buttons{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin: 1rem 0 0;
+}
+
+.modalContainer .modal .buttons button{
+    padding: 0.7rem 1rem;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    border: none;
+    border-radius: 4px;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.modalContainer .modal .buttons button:first-child{
+    background-color: var(--grayishblue);
+}
+
+.modalContainer .modal .buttons button:last-child{
+    background-color: var(--softred);
 }
