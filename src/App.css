@@ -113,6 +113,12 @@ body p{
     font-size: 0.8rem;
 }
 
+.comment .top .topright .deleteContain{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
 .comment .top .topright .delete{
     margin-right: 1rem;
     color: var(--softred);
@@ -120,6 +126,39 @@ body p{
 
 .comment .message{
     width: 90%;
+}
+
+.comment .editMessage{
+    width: 90%;
+}
+
+.comment .editMessage textarea{
+    resize: none;
+    width: 95%;
+    resize: none;
+    margin: 0.8rem 0.8rem 0 0;
+    outline: none;
+    border: 1px solid var(--lightgray);
+    padding: 1rem;
+}
+
+.comment .editMessage div{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.comment .editMessage button{
+    padding: 0.5rem 1.5rem;
+    max-height: 6vh;
+    width: 6rem;
+    justify-self: end;
+    border: none;
+    background-color: var(--moderateblue);
+    color: var(--white);
+    border-radius: 5px;
+    margin: 0.8rem 0 0 0;
+    cursor: pointer;
 }
 
     /* single comment styling ends*/

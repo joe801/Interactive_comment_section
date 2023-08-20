@@ -6,11 +6,13 @@ const Comments = ( {dataJson} ) => {
     const [content, setContent] = useState(''); // state variable to grab data from input component
     const currentUser = dataJson.currentUser;   
     const [comments, setComments] = useState([]);
-    const [deleteState, setDeleteState] = useState(false);
+    //const [deleteState, setDeleteState] = useState(false);
+
     //updating value of comment on first render
     useEffect(() =>{
         setComments(dataJson.comments);
     }, [dataJson.comments]);
+
     // object variable of new comment
     const newComment = {
         id: Math.random() *100,
@@ -19,13 +21,49 @@ const Comments = ( {dataJson} ) => {
         score: 0,
         user: currentUser,
     } 
+
     // function to add new comment to previos comments list
     const addContent = () => {
         setComments([...comments, newComment]);
         setContent('');
     }
 
-    //fumction to delete comment
+    // Function to delete a comment by its ID
+    const handleDeleteComment = (commentId) => {
+        const newComments = comments.filter(comment => comment.id !== commentId);
+        setComments(newComments);
+    }
+
+    // function to edit comment
+    const handleEditComment = (commentId, newContent) => {
+        const updatedComments = comments.map(comment => {
+            if (comment.id === commentId) {
+                return { ...comment, content: newContent };
+            }
+            return comment;
+        });
+        setComments(updatedComments);
+    }
+
+    const handleAddReply = (commentId, replyContent) => {
+        const newReply = {
+            id: Math.random() *100,
+            score: 0,
+            username: currentUser,  // This would ideally be the logged-in user's username.
+            createdAT: new Date().toISOString(),
+            content: replyContent,
+        };
+    
+        const updatedComments = comments.map(comment => {
+            if (comment.id === commentId) {
+                return { ...comment, replies: [...comment.replies, newReply] };
+            }
+            return comment;
+        });
+        setComments(updatedComments);
+    }
+    
+    
     return ( 
         <div>
             {
@@ -36,7 +74,8 @@ const Comments = ( {dataJson} ) => {
                             < div key={data.id}>
                             <Comment score={data.score} username={data.user.username}
                             createdAT={data.createdAt} content={data.content} 
-                            image={data.user.image.png}
+                            image={data.user.image.png} onDelete={() => handleDeleteComment(data.id)}
+                            onEdit={(newContent) => handleEditComment(data.id, newContent)}
                             />
                             {data.replies?.length > 0 ? 
                             data.replies.map((reply) => (

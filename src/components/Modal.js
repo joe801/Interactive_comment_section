@@ -1,6 +1,6 @@
-import { useState } from "react";
+//import { useState } from "react";
 
-const Modal = ( { setDeleteState }) => {
+const Modal = ( { setDeleteState, onDelete}) => {
     const cancel = () => {
         setDeleteState(false);
     }
@@ -11,7 +11,7 @@ const Modal = ( { setDeleteState }) => {
                 <p>Are you sure you want to delete this comment? This will remove the comment and can't be undone</p>
                 <div className="buttons">
                     <button onClick={cancel}>no, cancel</button>
-                    <button>yes, delete</button>
+                    <button onClick={() => onDelete()}>yes, delete</button>
             </div>
             </div>
         </div>
